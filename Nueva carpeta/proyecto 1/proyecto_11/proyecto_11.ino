@@ -1,0 +1,100 @@
+// Declarar los pines de los LEDs del primer semáforo (vehículos)
+const int ledRojo1 = 13;
+const int ledAmarillo1 = 12;
+const int ledVerde1 = 11;
+
+// Declarar los pines de los LEDs del segundo semáforo (vehículos)
+const int ledRojo2 = 5;
+const int ledAmarillo2 = 4;
+const int ledVerde2 = 3;
+
+// Declarar los pines de los LEDs del primer semáforo (peatones)
+const int ledRojoPeaton1 = 10;
+const int ledVerdePeaton1 = 9;
+
+// Declarar los pines de los LEDs del segundo semáforo (peatones)
+const int ledRojoPeaton2 = 2;
+const int ledVerdePeaton2 = 1;
+
+void setup() {
+  // Configurar los pines de los LEDs del primer semáforo (vehículos) como salida
+  pinMode(ledRojo1, OUTPUT);
+  pinMode(ledAmarillo1, OUTPUT);
+  pinMode(ledVerde1, OUTPUT);
+
+  // Configurar los pines de los LEDs del segundo semáforo (vehículos) como salida
+  pinMode(ledRojo2, OUTPUT);
+  pinMode(ledAmarillo2, OUTPUT);
+  pinMode(ledVerde2, OUTPUT);
+
+  // Configurar los pines de los LEDs del primer semáforo (peatones) como salida
+  pinMode(ledRojoPeaton1, OUTPUT);
+  pinMode(ledVerdePeaton1, OUTPUT);
+
+  // Configurar los pines de los LEDs del segundo semáforo (peatones) como salida
+  pinMode(ledRojoPeaton2, OUTPUT);
+  pinMode(ledVerdePeaton2, OUTPUT);
+}
+
+void loop() {
+
+  // Secuencia del primer semáforo (Semáforo 1 - vehículos)
+  digitalWrite(ledRojo1, HIGH);
+  digitalWrite(ledAmarillo1, LOW);
+  digitalWrite(ledVerde1, LOW);
+
+  // Secuencia del segundo semáforo (Semáforo 2 - vehículos)
+  digitalWrite(ledRojo2, LOW);
+  digitalWrite(ledAmarillo2, LOW);
+  digitalWrite(ledVerde2, HIGH);
+
+  // Secuencia del primer semáforo (Semáforo 1 - peatones)
+  digitalWrite(ledRojoPeaton1, LOW);
+  digitalWrite(ledVerdePeaton1, HIGH);
+
+  // Secuencia del segundo semáforo (Semáforo 2 - peatones)
+  digitalWrite(ledRojoPeaton2, HIGH);
+  digitalWrite(ledVerdePeaton2, LOW);
+
+  delay(5000); // Esperar 5 segundos
+
+  // Cambiar al amarillo en ambos semáforos de vehículos
+  digitalWrite(ledRojo1, LOW);
+  digitalWrite(ledAmarillo1, HIGH);
+  digitalWrite(ledVerde1, LOW);
+
+  digitalWrite(ledRojo2, LOW);
+  digitalWrite(ledAmarillo2, HIGH);
+  digitalWrite(ledVerde2, LOW);
+
+  delay(2000); // Esperar 2 segundos
+
+  // Cambiar al verde en el primer semáforo de vehículos y al rojo en el segundo
+  digitalWrite(ledRojo1, LOW);
+  digitalWrite(ledAmarillo1, LOW);
+  digitalWrite(ledVerde1, HIGH);
+
+  digitalWrite(ledRojo2, HIGH);
+  digitalWrite(ledAmarillo2, LOW);
+  digitalWrite(ledVerde2, LOW);
+
+  // Cambiar al rojo en el primer semáforo de peatones y al verde en el segundo
+  digitalWrite(ledRojoPeaton1, HIGH);
+  digitalWrite(ledVerdePeaton1, LOW);
+
+  digitalWrite(ledRojoPeaton2, LOW);
+  digitalWrite(ledVerdePeaton2, HIGH);
+
+  delay(5000); // Esperar 5 segundos
+
+  // Cambiar al amarillo en ambos semáforos de vehículos
+  digitalWrite(ledRojo1, LOW);
+  digitalWrite(ledAmarillo1, HIGH);
+  digitalWrite(ledVerde1, LOW);
+
+  digitalWrite(ledRojo2, LOW);
+  digitalWrite(ledAmarillo2, HIGH);
+  digitalWrite(ledVerde2, LOW);
+
+  delay(2000); // Esperar 2 segundos
+}
